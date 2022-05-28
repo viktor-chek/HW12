@@ -12,7 +12,7 @@ def add_post():
     return render_template("post_form.html")
 
 
-@add_blueprint.route("/upload", methods=["POST"])  # Вьюшка информирующая о загрузке или не закгрузке поста
+@add_blueprint.route("/upload", methods=["POST"])  # Вьюшка информирующая о загрузке или не загрузке поста
 def page_upload():
     try:
         file = request.files.get("picture")
