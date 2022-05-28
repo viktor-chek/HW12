@@ -7,12 +7,12 @@ main_blueprint = Blueprint("main_blueprint", __name__, template_folder="template
 logging.basicConfig(filename="basic.log")
 
 
-@main_blueprint.route("/") #Представление главной страницы
+@main_blueprint.route("/")   # Представление главной страницы
 def main_page():
     return render_template("index.html")
 
          
-@main_blueprint.route("/search")  #Представление страницы поиска
+@main_blueprint.route("/search")  # Представление страницы поиска
 def search_page():
     s = request.args.get("s", None)
     search_request = functions.get_posts(s.lower())
