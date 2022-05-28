@@ -7,7 +7,7 @@ logging.basicConfig(filename="basic.log", encoding="utf-8", level=logging.DEBUG)
 
 
 def get_posts(search):   
-    """Ищет вхождение подстроки в постах и возвращает список постов. 
+    """Ищет вхождение подстроки в постах, и возвращает список постов. 
 Обрабатывает исключение если нет доступа к json файлу"""
     content = []
     try:
