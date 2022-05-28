@@ -6,7 +6,9 @@ from json import JSONDecodeError
 logging.basicConfig(filename="basic.log", encoding="utf-8", level=logging.DEBUG)
 
 
-def get_posts(search):
+def get_posts(search):   
+    """Ищет вхождение подстроки в постах и возвращает список постов. 
+Обрабатывает исключение если нет доступа к json файлу"""
     content = []
     try:
         with open("posts.json", encoding="utf-8") as file:
@@ -22,6 +24,7 @@ def get_posts(search):
 
 
 def save_in_json(pic, text):
+    """Добавляет пост в в файл с данными."""
     dict_temp = {"pic": f"uploads/{pic}", "content": text}
     try:
         with open("posts.json", encoding="utf-8") as f:
@@ -38,6 +41,7 @@ def save_in_json(pic, text):
 
 
 def check_upload(file):
+    """Проверяет с нужным ли расширением загруженный файл"""
     ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', ""}
     extension = file.split(".")[-1]
     if extension in ALLOWED_EXTENSIONS:
