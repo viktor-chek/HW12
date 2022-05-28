@@ -7,12 +7,12 @@ logging.basicConfig(filename="basic.log")
 add_blueprint = Blueprint("add_blueprint", __name__, template_folder="templates")
 
 
-@add_blueprint.route("/post", methods=["GET", "POST"])
+@add_blueprint.route("/post", methods=["GET", "POST"])  #Представление страницы с загрузкой поста
 def add_post():
     return render_template("post_form.html")
 
 
-@add_blueprint.route("/upload", methods=["POST"])
+@add_blueprint.route("/upload", methods=["POST"])  # Вьюшка информирующая о загрузке или не закгрузке поста
 def page_upload():
     try:
         file = request.files.get("picture")
