@@ -7,7 +7,7 @@ logging.basicConfig(filename="basic.log")
 add_blueprint = Blueprint("add_blueprint", __name__, template_folder="templates")
 
 
-@add_blueprint.route("/post", methods=["GET", "POST"])  #Представление страницы с загрузкой поста
+@add_blueprint.route("/post", methods=["GET", "POST"])  # Представление страницы с загрузкой поста
 def add_post():
     return render_template("post_form.html")
 
