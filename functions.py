@@ -24,7 +24,7 @@ def get_posts(search):
 
 
 def save_in_json(pic, text):
-    """Добавляет пост в в файл с данными."""
+    """Добавляет пост в файл с данными."""
     dict_temp = {"pic": f"uploads/{pic}", "content": text}
     try:
         with open("posts.json", encoding="utf-8") as f:
